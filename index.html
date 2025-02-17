@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error {
+            color: red;
+        }
+        .error-border {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>  
+    <h1>Welcome to Geelong Medical Clinic.</h1>
+    <h2>Please fill in the form below to register.</h2> 
+    <form name="patientForm" action="register.php" onsubmit="return validateForm()" method="post">
+        <!-- first name -->
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname" maxlength="100" onfocus="clearError('fname', 'fname-error')">
+        <span id="fname-error" class="error" style="display:none;">This field is required</span><br><br>
+
+        <!-- last name -->
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname" onfocus="clearError('lname', 'lname-error')">
+        <span id="lname-error" class="error" style="display:none;">This field is required</span><br><br>
+
+        <!-- address -->
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" maxlength="255" onfocus="clearError('address', 'address-error')">
+        <span id="address-error" class="error" style="display:none;">This field is required</span><br><br>
+
+        <!-- ZIP code -->
+        <label for="zip-code">Zip Code</label>
+        <input type="text" id="zip-code" name="zip-code" maxlength="4" onfocus="clearError('zip-code', 'zip-code-error')">
+        <span id="zip-code-error" class="error" style="display:none;">This field is required</span><br><br>
+
+        <!-- City -->
+        <label for="city">City</label>
+        <input type="text" id="City" name="City" onfocus="clearError('City', 'city-error')">
+        <span id="city-error" class="error" style="display:none;">This field is required</span><br><br>
+
+        <!-- state -->
+        <label for="state">State</label>
+        <select id="state" name="state">
+            <option value="nsw">New South Wales</option>
+            <option value="vic">Victoria</option>
+            <option value="qsl">Queensland</option>
+            <option value="sa">South Australia</option>
+            <option value="wa">Western Australia</option>
+            <option value="tas">Tasmania</option>
+            <option value="nt">Northern Territory</option>
+            <option value="act">Australian Capital Territory</option>
+        </select>
+        
+        <!-- email -->
+        <label for="email">Email address:</label>
+        <input type="text" id="email" name="email" onfocus="clearError('email', 'email-error')">
+        <span id="email-error" class="error" style="display:none;">This field is required</span><br><br>
+
+        <!-- phone number-->
+        <label for="phone-number">Phone number:</label>
+        <input type="text" id="phone-number" name="phone-number" onfocus="clearError('phone-number', 'phone-number-error')">
+        <span id="phone-number-error" class="error" style="display:none;">This field is required</span><br><br>
+
+        <!-- medicare number -->
+        <label for="meidcare-number">Medicare number:</label>
+        <input type="text" id="meidcare-number" name="meidcare-number" onfocus="clearError('meidcare-number', 'meidcare-number-error')">
+        <span id="meidcare-number-error" class="error" style="display:none;">This field is required</span><br><br>
+
+        <button type="submit" name="signUp">Submit</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
